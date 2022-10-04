@@ -1,4 +1,4 @@
-var ERC721MintableComplete = artifacts.require('ERC721MintableComplete');
+var ERC721MintableComplete = artifacts.require('MyERC721Token');
 
 contract('TestERC721Mintable', accounts => {
 
@@ -55,14 +55,14 @@ contract('TestERC721Mintable', accounts => {
             try {
                 await this.contract.mint(account_three, 11, "baseTokenURI", {from: account_two});
             } catch(exception) {
-                reason = exception.reason;
+                reason = exception.data.stack;
             }
-
-            assert.equal(reason, "Caller is not the contract owner.");
+            assert.include(reason, "Caller is not the contract owner");
         })
 
         it('should return contract owner', async function () { 
             let owner = await this.contract.owner();
+            console.log(owner);
             assert.equal(owner, account_one);
         })
 

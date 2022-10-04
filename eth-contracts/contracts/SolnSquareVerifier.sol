@@ -1,4 +1,4 @@
-pragma solidity >=0.4.21 <0.6.0;
+pragma solidity ^0.5.5;
 
 // TODO define a contract call to the zokrates generated solidity contract <Verifier> or <renamedVerifier>
 import "./ERC721Mintable.sol";
@@ -43,7 +43,7 @@ contract SolnSquareVerifier is MyERC721Token {
         bytes32 solutionHash = _generateSolutionsHash(a,b,c, input);
         require(solutions[solutionHash].account == address(0), "Solution is already in use.");
         _addedSolution(account, id, solutionHash);
-        return mint(account, id, "verifurl");
+        return mint(account, id, "url");
     }
 
     function _generateSolutionsHash(uint[2] memory a, uint[2][2] memory b, uint[2] memory c, uint[2] memory input) private pure returns(bytes32) {

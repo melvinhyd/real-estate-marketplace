@@ -26,6 +26,10 @@ contract Ownable {
         _;
     }
 
+    function owner() public view returns(address) {
+        return _owner;
+    }
+
     //  4) fill out the transferOwnership function
     function transferOwnership(address newOwner) public onlyOwner {
         // TODO add functionality to transfer control of the contract to a newOwner.

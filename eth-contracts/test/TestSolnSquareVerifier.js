@@ -15,17 +15,17 @@ contract("TestSolnSquareVerifier", accounts => {
         })
 
         // Test if a new solution can be added for contract - SolnSquareVerifier
-        it("new solution can be added for contract", async() => {
+        it("new solution can be added for contract", async function() {
 
             let result = await this.contract.addSolution(account_two, tokenId, ...Object.values(zokratesProof.proof), zokratesProof.inputs, {from: account_two});
             
-            truffleAssert.eventEmitted(result, "SolutionCanBeAdded", (event) => {
+            truffleAssert.eventEmitted(result, "SolutionAdded", (event) => {
                 return event.id == tokenId && event.account == account_two
             });
         })
 
         // Test if an ERC721 token can be minted for contract - SolnSquareVerifier
-        it("ERC721 can be minted for contract", async() => {
+        it("ERC721 can be minted for contract", async function() {
             let result = false;
             try {
                 result = await this.contract.mintNewNFT.call(account_two, tokenId, ...Object.values(zokratesProof.proof), zokratesProof.inputs, {from: account_one});
