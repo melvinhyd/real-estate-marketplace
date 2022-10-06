@@ -19,7 +19,7 @@
     "solc": "^0.5.5",
     "solc-js": "^0.5.5",
     "truffle": "^5.0.1",
-    "web3": "^1.7.4",
+    "web3": "^1.4.0",
     "@truffle/hdwallet-provider": "^2.0.12"
   }
 }
