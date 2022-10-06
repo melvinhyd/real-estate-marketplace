@@ -9,6 +9,7 @@ The capstone will build upon the knowledge you have gained in the course in orde
 * Deploy smart contract locally (local blockchain using Ganache) : `truffle migrate --reset`
 * Run mocha tests (local blockchain using Ganache): `truffle test`
 * Deploy smart contract on Goerli Testnet: `truffle migrate --reset --network goerli` (Cf. deployment configuration in `truffle-config.js`)
+* Mint tokens: node mint.js
 
 # Contract deployment on Goerli
 
