@@ -34,6 +34,9 @@ The capstone will build upon the knowledge you have gained in the course in orde
 * 0x1139cb56e52c2374d27e12b942804e2d4dca1ed6a5af57360c9f6a58d2c8cbb4
 
 
+![Screenshot](CapstoneProject_Screenshot.png)
+
+
 # Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
